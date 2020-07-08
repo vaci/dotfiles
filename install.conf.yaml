@@ -6,6 +6,8 @@
 
 - link:
     ~/.emacs: emacs/emacs
+    ~/.gitconfig: git/config
+    ~/.tmux.conf: tmux.conf
     ~/.zshrc: zsh/zshrc
 
 - shell:

@@ -1,0 +1,10 @@
+[user]
+	email = vaci@vaci.org
+	name = Vaci
+[alias]
+        last = log -1 --stat
+      	m = checkout master
+        merged = branch --merged
+        st = status --short --branch
+[color]
+        ui = auto
