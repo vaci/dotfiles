@@ -1,0 +1,10 @@
+- defaults:
+  link:
+    relink: true
+
+- link:
+  ~/.zshrc: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
