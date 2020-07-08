@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.alias: zsh/alias
     ~/.emacs: emacs/emacs
     ~/.gitconfig: git/config
     ~/.tmux.conf: tmux.conf
