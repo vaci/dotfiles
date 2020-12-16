@@ -4,11 +4,19 @@
 
 - clean: ['~']
 
+- shell:
+    - [mkdir ~/.zplug]
+    - [mkdir ~/.zsh.d]
+    - [mkdir ~/.config]
+
 - link:
     ~/.alias: zsh/alias
+    ~/.config/powerline: powerline
     ~/.emacs: emacs/emacs
     ~/.gitconfig: git/config
+    ~/.nethackrc: nethackrc
     ~/.tmux.conf: tmux.conf
+    ~/.zsh.d/zplug.zsh: zplug/init.zsh
     ~/.zshrc: zsh/zshrc
 
 - shell:
