@@ -5,6 +5,7 @@
         last = log -1 --stat
       	m = checkout master
         merged = branch --merged
-        st = status --short --branch
+	st = status --short --branch
+	co = checkout
 [color]
         ui = auto

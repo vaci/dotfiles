@@ -2,3 +2,9 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot.git
 	ignore = dirty
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug
+[submodule "zsh-autoenv"]
+	path = zsh-autoenv
+	url = https://github.com/Tarrasch/zsh-autoenv
