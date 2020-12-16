@@ -1,9 +1,13 @@
-path=('/home/vaci/bin' $path)
+ZSH="${HOME:?}/.oh-my-zsh"
+
+path=("${HOME:?}/bin" $path)
+
+export LD_LIBRARY_PATH=/usr/local/lib
 
 # Set up the prompt
-autoload -Uz promptinit
-promptinit
-prompt adam1
+#autoload -Uz promptinit
+#promptinit
+#prompt adam1
 
 setopt histignorealldups sharehistory
 
@@ -39,4 +43,42 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-source ~/.alias
+# zplug
+ZPLUG_HOME="${HOME:?}/.zplug"
+
+#if [ -e "${HOME:?}/.zsh.d/zplug.zsh" ]; then
+#    source "${HOME:?}/.zsh.d/zplug.zsh"
+#    if ! zplug check; then
+#        zplug install
+#    fi
+#    zplug load --verbose
+#fi
+
+if [ -e "$ZSH/oh-my-zsh.sh" ]; then
+    source "$ZSH/oh-my-zsh.sh"
+fi
+
+if [ -e "${HOME:?}/.fzf.zsh" ]; then
+    source "${HOME:?}/.fzf.sh"
+fi
+
+if [ -e "${HOME:?}/.alias" ]; then
+    source "${HOME:?}/.alias"
+fi
+
+
+if [ -e "${HOME:?}/.nix-profile/etc/profile.d/nix.sh" ]; then
+    source "${HOME:?}/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+eval "$(direnv hook zsh)"
+
+if [ -e "${HOME:?}/.dotfiles/zsh-autoenv/autoenv.zsh" ]; then
+    source "${HOME:?}/.dotfiles/zsh-autoenv/autoenv.zsh"
+fi
+
+powerline-daemon --quiet
+
+if [ -e "${HOME:?}/.nix-profile/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh" ]; then
+    source "${HOME:?}/.nix-profile/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh"
+fi
